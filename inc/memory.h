@@ -51,7 +51,7 @@ struct transaction {
 	float amount;               //quantidade de SOT a ser transferido na transação	
 	int wallet_signature;		//ID da carteira que assinou a transação (tem que se igual ao src_id)
 	int server_signature;	    //ID do servidor que validou e processou a transação (só assina se a transação é válida)
-	struct timestamps change_time; //novo campo que contêm três timestamps
+	struct timestamps change_time; //novo campo que contêm três timestamps: o processaemento pela main, wallet e server
 };
 
 // Estrutura que agrega os shared memory buffers necessários para comunicação entre processos

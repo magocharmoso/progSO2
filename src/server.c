@@ -68,6 +68,8 @@ void server_process_transaction(struct transaction* tx, int server_id, struct in
     info->balances[tx->dest_id] += tx->amount;
     info->servers_stats[server_id]++;
     tx->server_signature = server_id;
+    //Regista o tempo
+    write_server_time(tx)
     printf("[Server %d] Li a transação %d do buffer e esta foi processada corretamente!\n", server_id, tx->id);
     return;
 }

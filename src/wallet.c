@@ -55,6 +55,9 @@ void wallet_process_transaction(struct transaction* tx, int wallet_id, struct in
     tx->wallet_signature = wallet_id; 
     info->wallets_stats[wallet_id]++;
     printf("[Wallet %d] Li a transação %d do buffer e a assinei!\n", wallet_id, tx->id);
+
+    //Regista o tempo
+    write_wallet_time(tx);
 };
 
 /* Função que escreve uma transação assinada no buffer de memória partilhada entre

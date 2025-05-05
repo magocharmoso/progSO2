@@ -265,6 +265,8 @@ void create_transaction(int *tx_counter, struct info_container *info, struct buf
             tx.server_signature = -1;
             tx.src_id = src_id;
             tx.wallet_signature = -1;
+            //Regista o tempo
+            write_main_time(tx);
             printf("[Main] A transação %d foi criada para transferir %.2f SOT da carteira %d para a carteira %d!\n", *tx_counter, amount, src_id, dest_id);
             write_main_wallets_buffer(buffs->buff_main_wallets, info->buffers_size, &tx);
             (*tx_counter)++;
